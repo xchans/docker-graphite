@@ -5,8 +5,9 @@ function (Settings) {
     datasources: {
       graphite: {
         type: 'graphite',
-        url: "GRAPHITE_HOST:GRAPHITE_PORT",
-        default: true
+        url: 'GRAPHITE_HOST:GRAPHITE_PORT',
+        default: true,
+        render_method: 'GET'
       }
     },
     default_route: '/dashboard/file/default.json',
