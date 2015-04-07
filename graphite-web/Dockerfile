@@ -55,6 +55,6 @@ RUN cd /opt/graphite/webapp/graphite && django-admin.py loaddata --settings=grap
 # Set CMD
 WORKDIR /opt/graphite/webapp
 
-EXPOSE 80
+EXPOSE 85
 
 CMD ["/usr/bin/supervisord", "-n"]
