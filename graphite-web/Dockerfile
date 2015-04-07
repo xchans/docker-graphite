@@ -4,22 +4,27 @@ MAINTAINER xchans <a1221110@empal.com>
 
 RUN apt-get -y update
 RUN apt-get -y install supervisor nginx-light
-RUN apt-get -y install git python python-twisted
-RUN apt-get -y install python-simplejson python-memcache python-ldap python-cairo \
-                       python-pysqlite2 python-support \
-                       python-pip gunicorn
+#RUN apt-get -y install git python python-twisted
+#RUN apt-get -y install python-simplejson python-memcache python-ldap python-cairo \
+#                       python-pysqlite2 python-support \
+#                       python-pip gunicorn
+
+RUN apt-get -y install python-dev python-pip
 
 # Install python packages
 RUN pip install pytz pyparsing django==1.5 django-tagging==0.3.1
 
 # Install whisper and graphite-web
 WORKDIR /usr/local/src
-RUN git clone https://github.com/graphite-project/whisper.git
-RUN cd whisper && git checkout 0.9.12 && python setup.py install
-RUN git clone https://github.com/graphite-project/graphite-web.git
-RUN cd graphite-web && \
-        git checkout 0.9.12 && \
-        python check-dependencies.py && python setup.py install
+#RUN git clone https://github.com/graphite-project/whisper.git
+#RUN cd whisper && git checkout 0.9.12 && python setup.py install
+#RUN git clone https://github.com/graphite-project/graphite-web.git
+#RUN cd graphite-web && \
+#        git checkout 0.9.12 && \
+#        python check-dependencies.py && python setup.py install
+
+RUN pip install whisper
+RUN pip install graphite-web
 
 # Setup graphite directories and environment variables
 ENV GRAPHITE_STORAGE_DIR /opt/graphite/storage
