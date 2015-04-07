@@ -24,15 +24,14 @@ $ sudo docker run -d --name carbon-cache \
   -e NODE_NAME=cache \
   xchans/carbon-cache
 $ sudo docker run -d --name graphite-web \
-  -p 8000:8000 \
+  -p 85:85 \
   -e CARBONLINK_HOSTS="carbon-cache:7002" \
   --volumes-from whisper \
   --link carbon-cache:carbon-cache \
   xchans/graphite-web
 $ sudo docker run -d --name grafana \
+  -e GRAPHITE_HOST="graphite.xchans.info" \
+  -e GRAPHITE_PORT=85 \
   -p 80:80 \
-  -e GRAPHITE_HOST="graphite-web" \
-  -e GRAPHITE_PORT=8000 \
-  --link graphite-web:graphite-web \
   xchans/grafana
 ```
