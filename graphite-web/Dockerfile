@@ -6,7 +6,7 @@ RUN apt-get -y update
 RUN apt-get -y install supervisor nginx-light
 RUN apt-get -y install python-simplejson python-memcache python-ldap python-cairo \
                        python-twisted python-pysqlite2 python-support \
-                       python-pip gunicorn
+                       python-pip gunicorn git
 
 # Install python packages
 RUN pip install pytz pyparsing django==1.5 django-tagging==0.3.1
@@ -48,5 +48,7 @@ RUN cd /opt/graphite/webapp/graphite && django-admin.py loaddata --settings=grap
 
 # Set CMD
 WORKDIR /opt/graphite/webapp
+
 EXPOSE 80
+
 CMD ["/usr/bin/supervisord", "-n"]
