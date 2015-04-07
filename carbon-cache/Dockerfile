@@ -16,10 +16,10 @@ ENV PICKLE_RECEIVER_PORT 2004
 ENV CACHE_QUERY_PORT 7002
 
 ADD ./config /opt/graphite/conf/
-ADD ./setup_configs.sh /opt/graphite/setup_configs.sh
+ADD ./setup_config.sh /opt/graphite/setup_config.sh
 ADD ./run.sh /opt/graphite/run.sh
 
 EXPOSE 2003 2004 7002
 
 WORKDIR /opt/graphite
-CMD ./setup_configs.sh && ./run.sh
+CMD ./setup_config.sh && ./run.sh
