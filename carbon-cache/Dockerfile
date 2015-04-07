@@ -22,4 +22,7 @@ ADD ./run.sh /opt/graphite/run.sh
 EXPOSE 2003 2004 7002
 
 WORKDIR /opt/graphite
+
+RUN chmod +x /*.sh
+
 CMD ./setup_config.sh && ./run.sh
