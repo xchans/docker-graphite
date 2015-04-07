@@ -5,7 +5,7 @@ function (Settings) {
     datasources: {
       graphite: {
         type: 'graphite',
-        url: 'GRAPHITE_HOST:GRAPHITE_PORT',
+        url: 'http://GRAPHITE_HOST:GRAPHITE_PORT',
         default: true,
         render_method: 'GET'
       }
