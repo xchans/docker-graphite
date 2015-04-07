@@ -1,7 +1,7 @@
 # docker-graphite
 
-http://blog.nacyot.com/articles/2014-07-17-graphite-with-dokcer/
-https://github.com/nacyot/docker-graphite
+- http://blog.nacyot.com/articles/2014-07-17-graphite-with-dokcer/
+- https://github.com/nacyot/docker-graphite
 
 ## 실행
 
@@ -10,9 +10,9 @@ $ git clone git://github.com/xchans/docker-graphite.git
 
 $ cd docker-graphite
 
+$ sudo docker build -t xchans/whisper ./whisper
 $ sudo docker build -t xchans/carbon-base ./carbon-base
 $ sudo docker build -t xchans/carbon-cache ./carbon-cache
-$ sudo docker build -t xchans/whisper ./whisper
 $ sudo docker build -t xchans/graphite-web ./graphite-web
 $ sudo docker build -t xchans/grafana ./grafana
 

@@ -4,9 +4,10 @@ MAINTAINER xchans <a1221110@empal.com>
 
 RUN apt-get -y update
 RUN apt-get -y install supervisor nginx-light
+RUN apt-get -y install git python python-twisted
 RUN apt-get -y install python-simplejson python-memcache python-ldap python-cairo \
-                       python-twisted python-pysqlite2 python-support \
-                       python-pip gunicorn git
+                       python-pysqlite2 python-support \
+                       python-pip gunicorn
 
 # Install python packages
 RUN pip install pytz pyparsing django==1.5 django-tagging==0.3.1

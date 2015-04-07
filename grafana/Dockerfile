@@ -4,8 +4,8 @@ MAINTAINER xchans <a1221110@empal.com>
 
 ENV GRAFANA_VERSION 1.9.1
 
-RUN apt-get update && \
-    apt-get install -y wget && \
+RUN apt-get -y update
+RUN apt-get -y install wget && \
     wget http://grafanarel.s3.amazonaws.com/grafana-${GRAFANA_VERSION}.tar.gz -O grafana.tar.gz && \
     tar zxf grafana.tar.gz && \
     rm grafana.tar.gz && \
@@ -21,6 +21,6 @@ ADD ./config/nginx.conf /etc/nginx/nginx.conf
 ENV GRAPHITE_HOST graphite-web
 ENV GRAPHITE_PORT 8000
 
-ADD setup_configs.sh /setup_configs.sh
+ADD setup_config.sh /setup_config.sh
 
-RUN chmod +x /setup_configs.sh && ./setup_configs.sh
+RUN chmod +x /setup_config.sh && ./setup_config.sh
