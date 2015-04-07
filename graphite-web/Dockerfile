@@ -9,7 +9,7 @@ RUN apt-get -y install supervisor nginx-light
 #                       python-pysqlite2 python-support \
 #                       python-pip gunicorn
 
-RUN apt-get -y install python-dev python-pip
+RUN apt-get -y install python-dev python-pip gunicorn
 
 # Install python packages
 RUN pip install pytz pyparsing django==1.5 django-tagging==0.3.1
