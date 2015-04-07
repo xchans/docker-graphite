@@ -8,6 +8,8 @@ https://github.com/nacyot/docker-graphite
 ```bash
 $ git clone git://github.com/xchans/docker-graphite.git
 
+$ cd docker-graphite
+
 $ sudo docker build -t xchanx/carbon-base ./carbon-base
 $ sudo docker build -t xchans/carbon-cache ./carbon-cache
 $ sudo docker build -t xchans/whisper ./whisper
