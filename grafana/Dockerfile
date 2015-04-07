@@ -21,6 +21,6 @@ ADD ./config/nginx.conf /etc/nginx/nginx.conf
 ENV GRAPHITE_HOST graphite-web
 ENV GRAPHITE_PORT 80
 
-ADD setup_config.sh /setup_config.sh
+ADD ./setup_config.sh /setup_config.sh
 
 RUN chmod +x /setup_config.sh && ./setup_config.sh
