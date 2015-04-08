@@ -1,7 +1,6 @@
 # docker-graphite
 
-- http://blog.nacyot.com/articles/2014-07-17-graphite-with-dokcer/
-- https://github.com/nacyot/docker-graphite
+[Docker](https://www.docker.com/) 위에 *[Graphite](https://github.com/graphite-project)* 와 *[Grafana](https://github.com/grafana/grafana)* 를 설치.
 
 ## 실행
 
@@ -35,3 +34,8 @@ $ sudo docker run -d --name grafana \
   -p 80:80 \
   xchans/grafana
 ```
+
+## 참고
+
+- http://blog.nacyot.com/articles/2014-07-17-graphite-with-dokcer/
+- https://github.com/nacyot/docker-graphite
