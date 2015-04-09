@@ -5,7 +5,7 @@
 
 ## 환경
 
-자세한 내용은 
+자세한 내용은 ...
 
 ## 실행
 
@@ -15,7 +15,7 @@
 $ curl -sSL https://get.docker.com/ubuntu/ | sudo sh
 ```
 
-### Docker 이미지 다운로드
+### Graphite Docker 이미지 빌드 소스 다운로드
 
 ```bash
 $ git clone git://github.com/xchans/docker-graphite.git
@@ -54,7 +54,7 @@ $ sudo docker run -d --name carbon-cache \
 
 - 수집 데이터 인터페이스(graphite-web) 컨테이너 실행
 
-```bash
+  ```bash
 $ sudo docker run -d --name graphite-web \
   -p 85:85 \
   -e CARBONLINK_HOSTS="carbon-cache:7002" \
@@ -65,7 +65,7 @@ $ sudo docker run -d --name graphite-web \
 
 - grafana 컨테이너 실행
 
-```bash
+  ```bash
 $ sudo docker run -d --name grafana \
   -e GRAPHITE_HOST="graphite.xchans.info" \
   -e GRAPHITE_PORT=85 \
