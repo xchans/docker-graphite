@@ -39,7 +39,9 @@ $ sudo docker build -t xchans/grafana ./grafana
 - Data를 관리하기 위한 Volume 컨테이너 실행
 
   ```bash
-$ sudo docker run --name whisper xchans/whisper
+$ sudo docker run --name whisper \
+  -v /mnt/graphite/data:/opt/graphite/storage/whisper
+  xchans/whisper
 ```
 
 - 수집 데몬(carbon-cache) 컨테이너 실행
